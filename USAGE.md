@@ -4,7 +4,7 @@
 ```csharp
 using Example;
 
-var sdk = new ExampleSDK();
+var sdk = new Example();
 
 var res = await sdk.Pets.CreatePetsAsync();
 

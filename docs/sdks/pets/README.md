@@ -1,5 +1,5 @@
-# PetsSDK
-(*Pets*)
+# Pets
+(*.Pets*)
 
 ### Available Operations
 
@@ -16,7 +16,7 @@ Create a pet
 ```csharp
 using Example;
 
-var sdk = new ExampleSDK();
+var sdk = new Example();
 
 var res = await sdk.Pets.CreatePetsAsync();
 
@@ -39,7 +39,7 @@ List all pets
 using Example;
 using Example.Models.Operations;
 
-var sdk = new ExampleSDK();
+var sdk = new Example();
 
 var res = await sdk.Pets.ListPetsAsync(21453);
 
@@ -68,7 +68,7 @@ Info for a specific pet
 using Example;
 using Example.Models.Operations;
 
-var sdk = new ExampleSDK();
+var sdk = new Example();
 
 var res = await sdk.Pets.ShowPetByIdAsync("string");
 

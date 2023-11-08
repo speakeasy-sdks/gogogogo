@@ -16,16 +16,16 @@ namespace Example
     using System.Threading.Tasks;
     using System;
 
-    public interface IExampleSDK
+    public interface IExample
     {
-        public IPetsSDK Pets { get; }
+        public IPets Pets { get; }
     }
     
     public class SDKConfig
     {
     }
 
-    public class ExampleSDK: IExampleSDK
+    public class Example: IExample
     {
         public SDKConfig Config { get; private set; }
         public static List<string> ServerList = new List<string>()
@@ -34,18 +34,18 @@ namespace Example
         };
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.0";
-        private const string _sdkGenVersion = "2.173.0";
+        private const string _sdkVersion = "0.2.0";
+        private const string _sdkGenVersion = "2.183.0";
         private const string _openapiDocVersion = "1.0.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.1.0 2.173.0 1.0.0 example";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.0 2.183.0 1.0.0 example";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
-        public IPetsSDK Pets { get; private set; }
+        public IPets Pets { get; private set; }
 
-        public ExampleSDK(string? serverUrl = null, ISpeakeasyHttpClient? client = null)
+        public Example(string? serverUrl = null, ISpeakeasyHttpClient? client = null)
         {
-            _serverUrl = serverUrl ?? ExampleSDK.ServerList[0];
+            _serverUrl = serverUrl ?? Example.ServerList[0];
 
             _defaultClient = new SpeakeasyHttpClient(client);
             _securityClient = _defaultClient;
@@ -54,7 +54,7 @@ namespace Example
             {
             };
 
-            Pets = new PetsSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            Pets = new Pets(_defaultClient, _securityClient, _serverUrl, Config);
         }
     }
 }

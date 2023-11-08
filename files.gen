@@ -1,5 +1,5 @@
 Example/Pets.cs
-Example/ExampleSDK.cs
+Example/Example.cs
 Example/Utils/BigIntSerializer.cs
 Example/Utils/DecimalSerializer.cs
 Example/Utils/EnumSerializer.cs
