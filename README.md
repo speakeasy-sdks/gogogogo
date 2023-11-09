@@ -15,9 +15,9 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
-## Nuget
+### Nuget
 
 ```bash
 dotnet add package example
@@ -26,12 +26,10 @@ dotnet add package example
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```csharp
 using Example;
 
-var sdk = new ExampleSDK();
+var sdk = new Example();
 
 var res = await sdk.Pets.CreatePetsAsync();
 
@@ -40,10 +38,10 @@ var res = await sdk.Pets.CreatePetsAsync();
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [Pets](docs/sdks/pets/README.md)
+### [Pets](docs/sdks/pets/README.md)
 
 * [CreatePets](docs/sdks/pets/README.md#createpets) - Create a pet
 * [ListPets](docs/sdks/pets/README.md#listpets) - List all pets
@@ -51,8 +49,6 @@ var res = await sdk.Pets.CreatePetsAsync();
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
