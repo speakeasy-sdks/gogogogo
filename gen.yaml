@@ -2,28 +2,36 @@ configVersion: 1.0.0
 management:
   docChecksum: 2516596125ef223fbbef6c434d22eaac
   docVersion: 1.0.0
-  speakeasyVersion: 1.109.0
-  generationVersion: 2.173.0
+  speakeasyVersion: 1.118.3
+  generationVersion: 2.187.7
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
+  comments: {}
+  sdkClassName: example
+  repoURL: https://github.com/speakeasy-sdks/gogogogo.git
+  usageSnippets:
+    optionalPropertyRendering: withExample
   baseServerURL: ""
   flattenGlobalSecurity: true
-  repoURL: https://github.com/speakeasy-sdks/gogogogo.git
-  sdkClassName: example
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
 features:
   csharp:
-    core: 2.93.0
+    core: 3.1.1
     flattening: 2.81.1
     globalServerURLs: 2.82.0
 csharp:
-  version: 0.1.0
+  version: 0.2.0
   author: petstore
   dotnetVersion: net5.0
+  imports:
+    option: openapi
+    paths:
+      callbacks: Models/Callbacks
+      errors: Models/Errors
+      operations: Models/Operations
+      shared: Models/Shared
+      webhooks: Models/Webhooks
+  inputModelSuffix: input
   maxMethodParams: 4
+  outputModelSuffix: output
   packageName: example
   published: true
   repoSubDirectory: .
