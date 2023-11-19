@@ -20,7 +20,7 @@ namespace Example
     using System.Threading.Tasks;
     using System;
 
-    public interface IPetsSDK
+    public interface IPets
     {
 
         /// <summary>
@@ -39,19 +39,19 @@ namespace Example
         Task<ShowPetByIdResponse> ShowPetByIdAsync(string petId);
     }
 
-    public class PetsSDK: IPetsSDK
+    public class Pets: IPets
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.0";
-        private const string _sdkGenVersion = "2.173.0";
+        private const string _sdkVersion = "0.2.0";
+        private const string _sdkGenVersion = "2.194.1";
         private const string _openapiDocVersion = "1.0.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.1.0 2.173.0 1.0.0 example";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.0 2.194.1 1.0.0 example";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
 
-        public PetsSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public Pets(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
             _securityClient = securityClient;
@@ -62,14 +62,9 @@ namespace Example
 
         public async Task<CreatePetsResponse> CreatePetsAsync()
         {
-            string baseUrl = _serverUrl;
-            if (baseUrl.EndsWith("/"))
-            {
-                baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
-            }
+            string baseUrl = this.Config.GetTemplatedServerDetails();
             var urlString = baseUrl + "/pets";
             
-
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
@@ -103,14 +98,9 @@ namespace Example
             {
                 Limit = limit,
             };
-            string baseUrl = _serverUrl;
-            if (baseUrl.EndsWith("/"))
-            {
-                baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
-            }
+            string baseUrl = this.Config.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/pets", request);
             
-
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
@@ -148,14 +138,9 @@ namespace Example
             {
                 PetId = petId,
             };
-            string baseUrl = _serverUrl;
-            if (baseUrl.EndsWith("/"))
-            {
-                baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
-            }
+            string baseUrl = this.Config.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/pets/{petId}", request);
             
-
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
