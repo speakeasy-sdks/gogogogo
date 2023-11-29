@@ -28,7 +28,7 @@ namespace Example.Models.Operations
         /// </summary>
         public Error? Error { get; set; }
 
-        public Dictionary<string, List<string>>? Headers { get; set; }
+        public Dictionary<string, List<string>> Headers { get; set; } = default!;
 
         /// <summary>
         /// A paged array of pets
@@ -43,6 +43,6 @@ namespace Example.Models.Operations
         /// <summary>
         /// Raw HTTP response; suitable for custom response parsing
         /// </summary>
-        public HttpResponseMessage? RawResponse { get; set; }
+        public HttpResponseMessage RawResponse { get; set; } = default!;
     }
 }
