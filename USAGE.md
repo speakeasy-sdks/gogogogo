@@ -1,6 +1,4 @@
-<!-- Start SDK Example Usage -->
-
-
+<!-- Start SDK Example Usage [usage] -->
 ```csharp
 using Example;
 
@@ -10,4 +8,4 @@ var res = await sdk.Pets.CreatePetsAsync();
 
 // handle response
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

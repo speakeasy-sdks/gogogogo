@@ -1,4 +1,4 @@
-# PetsSDK
+# Pets
 (*Pets*)
 
 ### Available Operations
@@ -26,7 +26,7 @@ var res = await sdk.Pets.CreatePetsAsync();
 
 ### Response
 
-**[CreatePetsResponse](../../models/operations/CreatePetsResponse.md)**
+**[CreatePetsResponse](../../Models/Operations/CreatePetsResponse.md)**
 
 
 ## ListPets
@@ -41,7 +41,7 @@ using Example.Models.Operations;
 
 var sdk = new ExampleSDK();
 
-var res = await sdk.Pets.ListPetsAsync(21453);
+var res = await sdk.Pets.ListPetsAsync(Limit: 21453);
 
 // handle response
 ```
@@ -55,7 +55,7 @@ var res = await sdk.Pets.ListPetsAsync(21453);
 
 ### Response
 
-**[ListPetsResponse](../../models/operations/ListPetsResponse.md)**
+**[ListPetsResponse](../../Models/Operations/ListPetsResponse.md)**
 
 
 ## ShowPetById
@@ -70,7 +70,7 @@ using Example.Models.Operations;
 
 var sdk = new ExampleSDK();
 
-var res = await sdk.Pets.ShowPetByIdAsync("string");
+var res = await sdk.Pets.ShowPetByIdAsync(PetId: "string");
 
 // handle response
 ```
@@ -84,5 +84,5 @@ var res = await sdk.Pets.ShowPetByIdAsync("string");
 
 ### Response
 
-**[ShowPetByIdResponse](../../models/operations/ShowPetByIdResponse.md)**
+**[ShowPetByIdResponse](../../Models/Operations/ShowPetByIdResponse.md)**
 
