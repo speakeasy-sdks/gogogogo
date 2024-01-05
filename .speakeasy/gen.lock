@@ -1,0 +1,52 @@
+lockVersion: 2.0.0
+id: 996e0013-6461-470a-844c-162eaa1474d5
+management:
+  docChecksum: 2516596125ef223fbbef6c434d22eaac
+  docVersion: 1.0.0
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 0.2.0
+  configChecksum: 659ddb58161cb3f2adc1f3c32adf0f6f
+  repoURL: https://github.com/speakeasy-sdks/gogogogo.git
+  repoSubDirectory: .
+  published: true
+features:
+  csharp:
+    core: 3.3.0
+    flattening: 2.81.1
+    globalServerURLs: 2.82.2
+generatedFiles:
+  - Example/Pets.cs
+  - Example/ExampleSDK.cs
+  - Example/Utils/BigIntSerializer.cs
+  - Example/Utils/DecimalSerializer.cs
+  - Example/Utils/EnumSerializer.cs
+  - Example/Utils/FlexibleObjectDeserializer.cs
+  - Example/Utils/HeaderSerializer.cs
+  - Example/Utils/IsoDateTimeSerializer.cs
+  - Example/Utils/RequestBodySerializer.cs
+  - Example/Utils/SecuritySerializer.cs
+  - Example/Utils/SpeakeasyHttpClient.cs
+  - Example/Utils/SpeakeasyMetadata.cs
+  - Example/Utils/URLBuilder.cs
+  - Example/Utils/Utilities.cs
+  - Example/Example.csproj
+  - Example.sln
+  - Example/Models/Operations/CreatePetsResponse.cs
+  - Example/Models/Operations/ListPetsRequest.cs
+  - Example/Models/Operations/ListPetsResponse.cs
+  - Example/Models/Operations/ShowPetByIdRequest.cs
+  - Example/Models/Operations/ShowPetByIdResponse.cs
+  - Example/Models/Shared/Error.cs
+  - Example/Models/Shared/Pet.cs
+  - docs/Models/Operations/CreatePetsResponse.md
+  - docs/Models/Operations/ListPetsRequest.md
+  - docs/Models/Operations/ListPetsResponse.md
+  - docs/Models/Operations/ShowPetByIdRequest.md
+  - docs/Models/Operations/ShowPetByIdResponse.md
+  - docs/Models/Shared/Error.md
+  - docs/Models/Shared/Pet.md
+  - docs/sdks/example/README.md
+  - docs/sdks/pets/README.md
+  - USAGE.md
+  - .gitattributes
