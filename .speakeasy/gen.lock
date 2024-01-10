@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 996e0013-6461-470a-844c-162eaa1474d5
 management:
-  docChecksum: 2516596125ef223fbbef6c434d22eaac
+  docChecksum: 1bdb7a6f8bf3995d4b40475228403253
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.2.0
-  configChecksum: 659ddb58161cb3f2adc1f3c32adf0f6f
+  generationVersion: 2.230.3
+  releaseVersion: 0.2.1
+  configChecksum: 69ee943293834dc8ae5a5390102facd2
   repoURL: https://github.com/speakeasy-sdks/gogogogo.git
   repoSubDirectory: .
   published: true

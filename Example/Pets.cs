@@ -26,7 +26,7 @@ namespace Example
         /// <summary>
         /// Create a pet
         /// </summary>
-        Task<CreatePetsResponse> CreatePetsAsync();
+        Task<CreatePetsResponse> CreatePetsAsync(Pet request);
 
         /// <summary>
         /// List all pets
@@ -43,10 +43,10 @@ namespace Example
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.0";
-        private const string _sdkGenVersion = "2.225.2";
+        private const string _sdkVersion = "0.2.1";
+        private const string _sdkGenVersion = "2.230.3";
         private const string _openapiDocVersion = "1.0.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.0 2.225.2 1.0.0 example";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.1 2.230.3 1.0.0 example";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -60,7 +60,7 @@ namespace Example
         }
         
 
-        public async Task<CreatePetsResponse> CreatePetsAsync()
+        public async Task<CreatePetsResponse> CreatePetsAsync(Pet request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = baseUrl + "/pets";
@@ -68,6 +68,15 @@ namespace Example
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
+            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json");
+            if (serializedBody == null) 
+            {
+                throw new ArgumentNullException("request body is required");
+            }
+            else
+            {
+                httpRequest.Content = serializedBody;
+            }
             
             var client = _defaultClient;
             

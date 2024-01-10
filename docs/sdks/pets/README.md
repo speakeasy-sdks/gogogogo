@@ -15,13 +15,25 @@ Create a pet
 
 ```csharp
 using Example;
+using Example.Models.Shared;
 
 var sdk = new ExampleSDK();
 
-var res = await sdk.Pets.CreatePetsAsync();
+Pet req = new Pet() {
+    Id = 596804,
+    Name = "string",
+};
+
+var res = await sdk.Pets.CreatePetsAsync(req);
 
 // handle response
 ```
+
+### Parameters
+
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | [Pet](../../Models/Shared/Pet.md)          | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
