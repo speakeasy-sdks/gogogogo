@@ -4,9 +4,9 @@ management:
   docChecksum: 1bdb7a6f8bf3995d4b40475228403253
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 0.2.2
-  configChecksum: cc3d7dd4e3aad7c347ffbffadee1ae62
+  generationVersion: 2.245.1
+  releaseVersion: 0.3.0
+  configChecksum: b71c0b8572429133362ab6ee767e8b50
   repoURL: https://github.com/speakeasy-sdks/gogogogo.git
   repoSubDirectory: .
   published: true

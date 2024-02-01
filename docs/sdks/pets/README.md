@@ -53,7 +53,7 @@ using Example.Models.Operations;
 
 var sdk = new ExampleSDK();
 
-var res = await sdk.Pets.ListPetsAsync(Limit: 21453);
+var res = await sdk.Pets.ListPetsAsync(limit: 21453);
 
 // handle response
 ```
@@ -82,7 +82,7 @@ using Example.Models.Operations;
 
 var sdk = new ExampleSDK();
 
-var res = await sdk.Pets.ShowPetByIdAsync(PetId: "string");
+var res = await sdk.Pets.ShowPetByIdAsync(petId: "string");
 
 // handle response
 ```
