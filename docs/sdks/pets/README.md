@@ -21,7 +21,7 @@ var sdk = new ExampleSDK();
 
 Pet req = new Pet() {
     Id = 596804,
-    Name = "string",
+    Name = "<value>",
 };
 
 var res = await sdk.Pets.CreatePetsAsync(req);
@@ -82,7 +82,7 @@ using Example.Models.Operations;
 
 var sdk = new ExampleSDK();
 
-var res = await sdk.Pets.ShowPetByIdAsync(petId: "string");
+var res = await sdk.Pets.ShowPetByIdAsync(petId: "<value>");
 
 // handle response
 ```

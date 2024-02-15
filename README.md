@@ -37,7 +37,7 @@ var sdk = new ExampleSDK();
 
 Pet req = new Pet() {
     Id = 596804,
-    Name = "string",
+    Name = "<value>",
 };
 
 var res = await sdk.Pets.CreatePetsAsync(req);

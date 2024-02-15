@@ -43,10 +43,10 @@ namespace Example
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.4.0";
-        private const string _sdkGenVersion = "2.250.2";
+        private const string _sdkVersion = "0.4.1";
+        private const string _sdkGenVersion = "2.258.0";
         private const string _openapiDocVersion = "1.0.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.4.0 2.250.2 1.0.0 example";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.4.1 2.258.0 1.0.0 example";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
 
