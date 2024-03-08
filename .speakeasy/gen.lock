@@ -3,21 +3,22 @@ id: 996e0013-6461-470a-844c-162eaa1474d5
 management:
   docChecksum: 1bdb7a6f8bf3995d4b40475228403253
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 0.4.1
-  configChecksum: f6c59b915e76ee1f8eb534d52f8face5
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 0.5.0
+  configChecksum: b2f9aec3702fb404828422926f3702bd
   repoURL: https://github.com/speakeasy-sdks/gogogogo.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.3.2
+    core: 3.4.3
     flattening: 2.81.1
-    globalServerURLs: 2.82.2
+    globalServerURLs: 2.82.3
 generatedFiles:
   - Example/Pets.cs
   - Example/ExampleSDK.cs
+  - global.json
   - Example/Utils/BigIntSerializer.cs
   - Example/Utils/DecimalSerializer.cs
   - Example/Utils/EnumSerializer.cs
