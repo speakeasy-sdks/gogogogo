@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace Example.Utils
 {
-    internal class EnumSerializer : JsonConverter
+    internal class EnumConverter : JsonConverter
     {
         public override bool CanConvert(System.Type objectType)
         {
@@ -25,8 +25,6 @@ namespace Example.Utils
 
             return objectType.IsEnum;
         }
-
-        public override bool CanRead => true;
 
         public override object? ReadJson(
             JsonReader reader,
@@ -52,7 +50,12 @@ namespace Example.Utils
                 throw new Exception($"Unable to find ToEnum method on {extensionType.FullName}");
             }
 
-            return method.Invoke(null, new[] { (string)reader.Value });
+            try {
+                return method.Invoke(null, new[] { (string)reader.Value });
+            } catch(System.Reflection.TargetInvocationException e) {
+                throw new Newtonsoft.Json.JsonSerializationException("Unable to convert value to enum", e);
+            }
+
         }
 
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)

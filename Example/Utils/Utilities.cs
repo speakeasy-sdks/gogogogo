@@ -22,25 +22,40 @@ namespace Example.Utils
 
     public class Utilities
     {
+        public static JsonConverter[] GetDefaultJsonConverters()
+        {
+            return new JsonConverter[]
+            {
+                new IsoDateTimeSerializer(),
+                new EnumConverter()
+            };
+        }
+
+        public static JsonSerializerSettings GetDefaultJsonSerializerSettings()
+        {
+            return new JsonSerializerSettings()
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                Converters = GetDefaultJsonConverters()
+            };
+        }
+
         public static JsonConverter[] GetJsonConverters(Type type, string format = "")
         {
             if (format == "string")
             {
                 if (type == typeof(BigInteger))
                 {
-                    return new JsonConverter[] { new BigIntSerializer() };
+                    return new JsonConverter[] { new BigIntStrConverter() };
                 }
+
                 if (type == typeof(Decimal))
                 {
-                    return new JsonConverter[] { new DecimalSerializer() };
+                    return new JsonConverter[] { new DecimalStrConverter() };
                 }
             }
 
-            return new JsonConverter[]
-            {
-                new IsoDateTimeSerializer(),
-                new EnumSerializer(),
-            };
+            return GetDefaultJsonConverters();
         }
 
         public static string SerializeJSON(object obj, string format = "")
@@ -200,9 +215,12 @@ namespace Example.Utils
 
             if (IsDate(obj))
             {
-                return StripSurroundingQuotes(JsonConvert.SerializeObject(obj, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new IsoDateTimeSerializer(), new EnumSerializer() }}));
+                return StripSurroundingQuotes(
+                    JsonConvert.SerializeObject(obj, GetDefaultJsonSerializerSettings())
+                );
             }
-            return JsonConvert.SerializeObject(obj, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new IsoDateTimeSerializer(), new EnumSerializer() }});
+
+            return JsonConvert.SerializeObject(obj, GetDefaultJsonSerializerSettings());
         }
 
         public static bool IsContentTypeMatch(string expected, string? actual)

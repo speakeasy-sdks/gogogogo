@@ -3,25 +3,27 @@ id: 996e0013-6461-470a-844c-162eaa1474d5
 management:
   docChecksum: 1bdb7a6f8bf3995d4b40475228403253
   docVersion: 1.0.0
-  speakeasyVersion: 1.205.2
-  generationVersion: 2.279.1
-  releaseVersion: 0.5.0
-  configChecksum: b2f9aec3702fb404828422926f3702bd
+  speakeasyVersion: 1.228.1
+  generationVersion: 2.292.0
+  releaseVersion: 0.6.0
+  configChecksum: 24ec5a7e5d389f0b57b1d5fa320b57d0
   repoURL: https://github.com/speakeasy-sdks/gogogogo.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.4.3
+    core: 3.5.0
     flattening: 2.81.1
     globalServerURLs: 2.82.3
 generatedFiles:
   - Example/Pets.cs
   - Example/ExampleSDK.cs
   - global.json
-  - Example/Utils/BigIntSerializer.cs
-  - Example/Utils/DecimalSerializer.cs
-  - Example/Utils/EnumSerializer.cs
+  - Example.sln
+  - Example/Utils/AnyDeserializer.cs
+  - Example/Utils/BigIntStrConverter.cs
+  - Example/Utils/DecimalStrConverter.cs
+  - Example/Utils/EnumConverter.cs
   - Example/Utils/FlexibleObjectDeserializer.cs
   - Example/Utils/HeaderSerializer.cs
   - Example/Utils/IsoDateTimeSerializer.cs
@@ -32,7 +34,6 @@ generatedFiles:
   - Example/Utils/URLBuilder.cs
   - Example/Utils/Utilities.cs
   - Example/Example.csproj
-  - Example.sln
   - Example/Models/Operations/CreatePetsResponse.cs
   - Example/Models/Operations/ListPetsRequest.cs
   - Example/Models/Operations/ListPetsResponse.cs

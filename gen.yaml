@@ -12,8 +12,9 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.5.0
+  version: 0.6.0
   author: petstore
+  company: ""
   dotnetVersion: net5.0
   flattenGlobalSecurity: false
   imports:
@@ -28,3 +29,4 @@ csharp:
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: example
+  product: ""

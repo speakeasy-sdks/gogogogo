@@ -14,12 +14,13 @@ namespace Example.Utils
     using System.Globalization;
     using System.Numerics;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
-    internal class BigIntSerializer : JsonConverter
+    internal class BigIntStrConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
-            var  nullableType = Nullable.GetUnderlyingType(objectType);
+            var nullableType = Nullable.GetUnderlyingType(objectType);
             if (nullableType != null)
             {
                 return nullableType == typeof(BigInteger);
@@ -27,8 +28,6 @@ namespace Example.Utils
 
             return objectType == typeof(BigInteger);
         }
-
-        public override bool CanRead => true;
 
         public override object? ReadJson(
             JsonReader reader,
@@ -42,7 +41,11 @@ namespace Example.Utils
                 return null;
             }
 
-            return BigInteger.Parse(reader.Value.ToString()!);
+            try {
+                return BigInteger.Parse(reader.Value.ToString()!);
+            } catch (System.FormatException ex) {
+                throw new Newtonsoft.Json.JsonSerializationException("Could not parse BigInteger", ex);
+            }
         }
 
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
