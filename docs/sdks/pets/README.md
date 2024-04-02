@@ -39,7 +39,11 @@ var res = await sdk.Pets.CreatePetsAsync(req);
 ### Response
 
 **[CreatePetsResponse](../../Models/Operations/CreatePetsResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Example.Models.Errors.SDKException | 4xx-5xx                            | */*                                |
 
 ## ListPets
 
@@ -68,7 +72,11 @@ var res = await sdk.Pets.ListPetsAsync(limit: 21453);
 ### Response
 
 **[ListPetsResponse](../../Models/Operations/ListPetsResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Example.Models.Errors.SDKException | 4xx-5xx                            | */*                                |
 
 ## ShowPetById
 
@@ -97,4 +105,8 @@ var res = await sdk.Pets.ShowPetByIdAsync(petId: "<value>");
 ### Response
 
 **[ShowPetByIdResponse](../../Models/Operations/ShowPetByIdResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Example.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

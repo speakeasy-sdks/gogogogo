@@ -10,6 +10,7 @@
 #nullable enable
 namespace Example
 {
+    using Example.Models.Errors;
     using Example.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
@@ -49,10 +50,10 @@ namespace Example
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.0";
-        private const string _sdkGenVersion = "2.292.0";
+        private const string _sdkVersion = "0.7.0";
+        private const string _sdkGenVersion = "2.295.1";
         private const string _openapiDocVersion = "1.0.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.6.0 2.292.0 1.0.0 Example";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.0 2.295.1 1.0.0 Example";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;

@@ -12,8 +12,9 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.6.0
+  version: 0.7.0
   author: petstore
+  clientServerStatusCodesAsErrors: true
   company: ""
   dotnetVersion: net5.0
   flattenGlobalSecurity: false
